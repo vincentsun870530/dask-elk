@@ -38,6 +38,6 @@ def bulk_save(partition, client_cls, client_args, **kwargs):
             action.update(record)
         actions.append(action)
 
-    bulk(elk_client, actions, stats_only=False)
+    bulk(elk_client, actions, stats_only=False,request_timeout=200)
 
     return partition
